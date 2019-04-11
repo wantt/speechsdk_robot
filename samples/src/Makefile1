@@ -1,0 +1,11 @@
+# wantongtang@foxmail.com 20190410
+main:record.o ALSADevices.o kws.o
+	g++    ALSADevices.o kws.o main.cpp  -lasound  -o main -I../../include -L../../lib/armv8/ -lmobvoisdk -lpthread 
+ALSADevices.o:
+	g++ -c ALSADevices.cpp -I../../include
+record.o:
+	g++ -c record.c -I../../include
+kws.o:
+	g++ -c kws.c  -I../../include
+clean:
+	rm -rf *.o main	
